@@ -1,4 +1,4 @@
-pragma solidity 0.8.15;
+pragma solidity ^0.8.17;
 
 interface IPancakeRouter01 {
     function factory() external pure returns (address);
@@ -154,7 +154,7 @@ interface IPancakeFactory {
 
 
 
-pragma solidity >= 0.8.15;
+pragma solidity ^0.8.17;
 
 /**
  * @dev Provides information about the current execution context, including the
@@ -179,7 +179,7 @@ abstract contract Context {
 
 
 
-pragma solidity >= 0.8.15;
+pragma solidity ^0.8.17;
 
 
 /**
@@ -255,7 +255,7 @@ abstract contract Ownable is Context {
 
 
 
-pragma solidity >= 0.8.15;
+pragma solidity ^0.8.17;
 
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
@@ -356,7 +356,7 @@ interface IERC20Metadata is IERC20 {
 
 
 
-pragma solidity >= 0.8.15;
+pragma solidity ^0.8.17;
 
 /**
  * @dev Contract module that helps prevent reentrant calls to a function.
@@ -655,7 +655,7 @@ library SafeMath {
 
 //SPDX-License-Identifier: MIT
 
-pragma solidity >= 0.8.15;
+pragma solidity ^0.8.17;
 
 contract ToFStake is Ownable, ReentrancyGuard {
     using SafeMath for uint256;
@@ -664,11 +664,11 @@ contract ToFStake is Ownable, ReentrancyGuard {
     IPancakeRouter02 internal _router;
     
     IERC20 public ToF; //address of the token
-    uint256 poolFee = 3; // % fee deducted from, deposits, withdrawals
+    uint256 public poolFee = 3; // % fee deducted from, deposits, withdrawals
     uint256 public earlyWithdrawFee = 25;
     uint256 public earlyWithdrawFeeTime = 7 days;
 
-    address public feeAddress = 0x349D13A1dd532B1cadb8676E55b34B8427A563C2; // ToF Token $Rhllor Inu Contract Address
+    address public feeAddress = 0x349D13A1dd532B1cadb8676E55b34B8427A563C2; // ToF Token Rhllor Contract Address
 
     struct userStakeProfile {
         uint256 stakedAmount;
@@ -687,7 +687,7 @@ contract ToFStake is Ownable, ReentrancyGuard {
     
     constructor () {        
         setRouter(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D); //Uniswap V2 Router
-        ToF = IERC20(0x349D13A1dd532B1cadb8676E55b34B8427A563C2); //ToF Token $Rhllor Inu Contract Address
+        ToF = IERC20(0x349D13A1dd532B1cadb8676E55b34B8427A563C2); //ToF Token Rhllor Contract Address
         setETHPerBlock(40000000000000); // 40000000000000 | Set ETH per block to 0.00004 ETH. ~6646 blocks in 24h. 0.00004 x 6646 = 0.26584 ETH 
     }
 
