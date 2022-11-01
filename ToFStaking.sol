@@ -668,7 +668,7 @@ contract ToFStake is Ownable, ReentrancyGuard {
     uint256 public earlyWithdrawFee = 25;
     uint256 public earlyWithdrawFeeTime = 7 days;
 
-    address public feeAddress = 0x349D13A1dd532B1cadb8676E55b34B8427A563C2; // ToF Token Rhllor Contract Address
+    address public feeAddress = 0x431c71594CAE3a8935AFCf2133D294e37b84e6F2; // ToF Token Rhllor Contract Address
 
     struct userStakeProfile {
         uint256 stakedAmount;
